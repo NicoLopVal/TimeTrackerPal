@@ -26,7 +26,7 @@ namespace TimeTrackerFriend
         public bool _flashCreated = false;
         public string _reminderOption = ReminderOptions.Messenger.ToString();
         public string currentTaskName;
-        public string _saveDirectory = "C:\\Users\\BairesDev NLV\\TTPal History";
+        public string _saveDirectory = "C:\\Users\\BairesDev NLV\\Documents\\TTPal History";
         public int reminderVerticalPos = 70;
         public int _reminderTime = 15;
         public int _saveTime = 15;
