@@ -63,7 +63,7 @@ namespace TimeTrackerFriend
             this.txbFileDirectory.Name = "txbFileDirectory";
             this.txbFileDirectory.Size = new System.Drawing.Size(234, 23);
             this.txbFileDirectory.TabIndex = 0;
-            this.txbFileDirectory.Text = "C:\\Users\\BairesDev NLV\\TTPal History";
+            this.txbFileDirectory.Text = "C:\\Users\\BairesDev NLV\\Documents\\TTPal History";
             // 
             // btnBrowse
             // 
@@ -252,6 +252,7 @@ namespace TimeTrackerFriend
             // jiraTitleSettingsLabel
             // 
             this.jiraTitleSettingsLabel.AutoSize = true;
+            this.jiraTitleSettingsLabel.Enabled = false;
             this.jiraTitleSettingsLabel.Location = new System.Drawing.Point(22, 220);
             this.jiraTitleSettingsLabel.Name = "jiraTitleSettingsLabel";
             this.jiraTitleSettingsLabel.Size = new System.Drawing.Size(174, 15);
@@ -261,16 +262,16 @@ namespace TimeTrackerFriend
             // JiraSettingsCheckBox
             // 
             this.JiraSettingsCheckBox.AutoSize = true;
-            this.JiraSettingsCheckBox.Checked = true;
-            this.JiraSettingsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.JiraSettingsCheckBox.Location = new System.Drawing.Point(331, 220);
             this.JiraSettingsCheckBox.Name = "JiraSettingsCheckBox";
             this.JiraSettingsCheckBox.Size = new System.Drawing.Size(15, 14);
             this.JiraSettingsCheckBox.TabIndex = 18;
             this.JiraSettingsCheckBox.UseVisualStyleBackColor = true;
+            this.JiraSettingsCheckBox.CheckedChanged += new System.EventHandler(this.JiraSettingsCheckBox_CheckedChanged);
             // 
             // jiraUsernameTextBox
             // 
+            this.jiraUsernameTextBox.Enabled = false;
             this.jiraUsernameTextBox.Location = new System.Drawing.Point(96, 242);
             this.jiraUsernameTextBox.Name = "jiraUsernameTextBox";
             this.jiraUsernameTextBox.Size = new System.Drawing.Size(100, 23);
@@ -279,6 +280,7 @@ namespace TimeTrackerFriend
             // jiraUsernameLabel
             // 
             this.jiraUsernameLabel.AutoSize = true;
+            this.jiraUsernameLabel.Enabled = false;
             this.jiraUsernameLabel.Location = new System.Drawing.Point(22, 245);
             this.jiraUsernameLabel.Name = "jiraUsernameLabel";
             this.jiraUsernameLabel.Size = new System.Drawing.Size(63, 15);
@@ -288,6 +290,7 @@ namespace TimeTrackerFriend
             // tokenJiraLabel
             // 
             this.tokenJiraLabel.AutoSize = true;
+            this.tokenJiraLabel.Enabled = false;
             this.tokenJiraLabel.Location = new System.Drawing.Point(26, 274);
             this.tokenJiraLabel.Name = "tokenJiraLabel";
             this.tokenJiraLabel.Size = new System.Drawing.Size(61, 15);
@@ -296,6 +299,7 @@ namespace TimeTrackerFriend
             // 
             // jiraTokenTextBox
             // 
+            this.jiraTokenTextBox.Enabled = false;
             this.jiraTokenTextBox.Location = new System.Drawing.Point(96, 271);
             this.jiraTokenTextBox.Name = "jiraTokenTextBox";
             this.jiraTokenTextBox.Size = new System.Drawing.Size(206, 23);
@@ -306,6 +310,7 @@ namespace TimeTrackerFriend
             this.saveToPCJiraSettingsCheckBox.AutoSize = true;
             this.saveToPCJiraSettingsCheckBox.Checked = true;
             this.saveToPCJiraSettingsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.saveToPCJiraSettingsCheckBox.Enabled = false;
             this.saveToPCJiraSettingsCheckBox.Location = new System.Drawing.Point(202, 244);
             this.saveToPCJiraSettingsCheckBox.Name = "saveToPCJiraSettingsCheckBox";
             this.saveToPCJiraSettingsCheckBox.Size = new System.Drawing.Size(104, 19);

@@ -51,7 +51,7 @@ namespace TimeTrackerFriend
             else
                 MessageBox.Show("Invalid directory, use another one or deactivate the save option.");
 
-            if(this.JiraSettingsCheckBox.Checked == true) //TO BE IMPLEMENTED
+            if(this.JiraSettingsCheckBox.Checked) 
             {
                 try
                 {
@@ -105,6 +105,28 @@ namespace TimeTrackerFriend
                 nudReminderTime.Enabled = false;
                 lblReminderOps.Enabled = false;
                 lblReminderTime.Enabled = false;
+            }
+        }
+
+        private void JiraSettingsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (JiraSettingsCheckBox.Checked)
+            {
+                jiraTitleSettingsLabel.Enabled = true;
+                jiraTokenTextBox.Enabled = true;
+                jiraUsernameLabel.Enabled = true;
+                jiraUsernameTextBox.Enabled = true;
+                tokenJiraLabel.Enabled = true;
+                saveToPCJiraSettingsCheckBox.Enabled = true;
+            }
+            else
+            {
+                jiraTitleSettingsLabel.Enabled = false;
+                jiraTokenTextBox.Enabled = false;
+                jiraUsernameLabel.Enabled = false;
+                jiraUsernameTextBox.Enabled = false;
+                tokenJiraLabel.Enabled = false;
+                saveToPCJiraSettingsCheckBox.Enabled = false;
             }
         }
 
