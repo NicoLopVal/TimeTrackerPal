@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TimeTrackerFriend
 {
@@ -29,20 +30,19 @@ namespace TimeTrackerFriend
             jiraConnection.Issues.AddWorklogAsync(issueKey, jiraWorklog).Wait();
         }
 
-        public bool ValidateCredentials()
+        public async Task<bool> ValidateCredentials()
         {
             try
             {
                 var jiraConnection = CreateJiraConnection();
-                var currentUser = jiraConnection.Users.GetMyselfAsync().Result;
+                var response = await jiraConnection.Users.GetUserAsync(_userName);
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($"Error validating credentials: {ex.Message}");
                 return false;
             }
         }
-
-
     }
 }

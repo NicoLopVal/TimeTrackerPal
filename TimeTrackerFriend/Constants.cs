@@ -32,6 +32,6 @@ namespace TimeTrackerFriend
         public const int deleteButtonBasePointY = 83;
         public const int mainHeightBasePointY = 184;
         public const int recordControlHeight = 29;
-        public const string baseJiraUrl = "https://bairesdev.atlassian.net/rest/api/3/";
+        public const string baseJiraUrl = "https://bairesdev.atlassian.net";
     }
 }
