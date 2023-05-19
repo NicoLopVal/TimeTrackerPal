@@ -24,9 +24,12 @@ namespace TimeTrackerFriend
         public bool _savedConfirmed = false;
         public bool reminderInterrupted = false;
         public bool _flashCreated = false;
+        public bool _saveToJira = false;
         public string _reminderOption = ReminderOptions.Messenger.ToString();
         public string currentTaskName;
         public string _saveDirectory = "C:\\Users\\BairesDev NLV\\Documents\\TTPal History";
+        public string _jiraUser = "";
+        public string _jiraToken = "";
         public int reminderVerticalPos = 70;
         public int _reminderTime = 15;
         public int _saveTime = 15;
@@ -137,6 +140,11 @@ namespace TimeTrackerFriend
             {
                 if(_saveActivated)
                     SaveProcess();
+                if (_saveToJira)
+                {
+                    var jiraConnection = new JiraApiService(_jiraUser,_jiraToken);
+                    jiraConnection.SaveToJira(this);
+                }
                 Application.Exit();
             }
         }

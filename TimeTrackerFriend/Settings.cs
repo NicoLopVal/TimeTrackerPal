@@ -46,6 +46,9 @@ namespace TimeTrackerFriend
                 else
                     _mainForm._reminderOption = rdbMessenger.Text;
                 _mainForm._saveDirectory = txbFileDirectory.Text;
+                _mainForm._saveToJira = this.JiraSettingsCheckBox.Checked;
+                _mainForm._jiraUser = this.jiraUsernameTextBox.Text;
+                _mainForm._jiraToken = this.jiraTokenTextBox.Text;
                 Close();
             }
             else
@@ -53,18 +56,10 @@ namespace TimeTrackerFriend
 
             if(this.JiraSettingsCheckBox.Checked) 
             {
-                try
-                {
-                    var jiraConnection = new JiraApiService(this.jiraUsernameTextBox.Text, this.jiraTokenTextBox.Text);
-                    jiraConnection.ValidateCredentials();
-                }
-                catch
-                {
-                    string errorMessage = "Couldnt stablish a connection to Jira API with the credentials provided";
-                    MessageBox.Show(errorMessage, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                
+                var jiraConnection = new JiraApiService(this.jiraUsernameTextBox.Text, this.jiraTokenTextBox.Text);
+                var response = jiraConnection.CheckJiraConnection();
+                if (!response)
+                    MessageBox.Show("Couldn't connect to Jira, check your credentials", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);             
             }
         }
 

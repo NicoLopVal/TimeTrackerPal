@@ -178,5 +178,12 @@ namespace TimeTrackerFriend
             var seconds = (int)(totalSeconds - (hours * 3600) - (minutes * 60));
             return string.Format("{0:D2}:{1:D2}:{2:D2}", hours, minutes, seconds);
         }
+
+        public static bool HasJiraTaskCodeFormat(string input)
+        {
+            string pattern = @"^[a-zA-Z]+\-\d+$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(input);
+        }
     }
 }

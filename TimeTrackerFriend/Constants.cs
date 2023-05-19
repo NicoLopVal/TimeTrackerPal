@@ -33,5 +33,7 @@ namespace TimeTrackerFriend
         public const int mainHeightBasePointY = 184;
         public const int recordControlHeight = 29;
         public const string baseJiraUrl = "https://bairesdev.atlassian.net";
+        public const string logWorkTimeApiPath = "/rest/api/2/issue/{issue}/worklog";
+        public const string checkUserApiPath = "/rest/api/3/myself";
     }
 }

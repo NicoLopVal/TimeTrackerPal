@@ -30,6 +30,8 @@ namespace TimeTrackerFriend
 
         public int Seconds() => (int)(elapsedSeconds - (Hours() * 3600) - (Minutes() * 60));
 
+        public int TotalSeconds() =>(int)elapsedSeconds;
+
         public void AddSeconds(double seconds)
         {
             elapsedSeconds += seconds;
